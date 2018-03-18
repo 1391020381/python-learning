@@ -18,3 +18,21 @@
      * ls -a (显示所有文件)
      * ls -l (以列表的格式显示)
      * ls -h -l -a等同于<ls -lah>
+     * ls --help
+     * man<manual> ls
+     * gedit
+     * cat<查看>
+     * history
+     * !40
+     * clear
+     * 通配符 *.js  ?.js
+     * rm<删除>
+        * -r 就是向下递归，不管有多少级目录，一并删除
+        * -f 就是直接强行删除，不作任何提示的意思
+        * 删除文件夹实例：
+        * rm -rf /var/log/httpd/access
+        * 将会删除/var/log/httpd/access目录以及其下所有文件、文件夹
+        * 删除文件使用实例：
+        * rm -f /var/log/httpd/access.log
+        * 将会强制删除/var/log/httpd/access.log这个文件
+  # 重定向    
