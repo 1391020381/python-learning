@@ -62,4 +62,14 @@
    * grip "^ntfs$" xxx.txt<正则匹配>
 
 
-* find   
+* find
+# 归档管理 tar  
+ * tar -cvf  test.tar *.js
+ * tar -xvf test.tar 
+ ## 压缩
+  * ll <ls -la>
+  *  tar -zcvf xxx.tar.gz *.js
+  * tar -zxvf xxx.tar.gz
+  * tar -cvJf yyy.tar.bz2  *.js
+  * zip
+  * which
