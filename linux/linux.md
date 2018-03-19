@@ -51,4 +51,15 @@
    * mkdir A/B/C -p  <自动创建  B再自动创建 C>
    * rmdir
    * rm 
- # 链接  
+ # 链接 
+   * mv a.txt b.txt<重命名>
+   * mv 111.txt laowang/
+   * cp A  B<拷贝   -r 可以拷贝文件夹>
+   * ln -s 1.txt 2.txt<软链接>
+   * ln 1.txt 2.txt
+   * cat 1.txt 2.txt > xxx.txt<合并> 
+   * grep "ntfs" xxx.txt<搜索>
+   * grip "^ntfs$" xxx.txt<正则匹配>
+
+
+* find   
