@@ -35,4 +35,20 @@
         * 删除文件使用实例：
         * rm -f /var/log/httpd/access.log
         * 将会强制删除/var/log/httpd/access.log这个文件
-  # 重定向    
+  # 重定向  
+    * ls > xxx.txt  
+    * ls >> xxx.txt(重定向,ls命令的显示内容,会写到xxx.txt中, >>是追加)
+    * ls -alh /bin | more
+    * 管道 |
+ # 相对路径和绝对路径
+   * 相对路径<以pwd为基准 ./  ../>
+   * 绝对路径(以 / 根目录为基准)
+   * cd -
+   * cd ~ <家目录>
+   * 按两次 tab  键会显示有可以不全的结果
+ # 文件夹
+   * mkdir  
+   * mkdir A/B/C -p  <自动创建  B再自动创建 C>
+   * rmdir
+   * rm 
+ # 链接  
