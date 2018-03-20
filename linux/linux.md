@@ -107,5 +107,16 @@
   * 添加用户到某个组<添加到某个组,就该组的权限>
     * sudo usermod -a -G sudo justdoit
     * sudo usermod -a -G adm justdoit
-  * chgrp
-  * chown  
+  * chgrp<修改组>
+  * chown<修改文件拥有者> 
+  * ll命令的显示
+    * 第一个字母是d这个文件是  文件夹
+    * 文件拥有者的权限/同组的权限/其他人的权限 rwx<可读可写可执行>
+## 修改权限
+* u<user> g<group> o<other>
+* chmod u=rwx 2.js   
+* chmod u=r,g=r,o=r 2.js 
+* r-4 w-2 x-1
+  * chmod 137 2.js
+# 编辑器  
+  * vim
