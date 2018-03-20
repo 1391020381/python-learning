@@ -73,3 +73,39 @@
   * tar -cvJf yyy.tar.bz2  *.js
   * zip
   * which
+# 系统管理
+ * cal -y 2008
+ * date
+ * date > test.txt
+ * date "+Y年%m月%n日"  
+ * ps
+   * ps -aux  <进程>
+   * top
+   * htop
+   * kill -9 <pid>
+  * reboot<重启> shutdown<关机> init  
+# 磁盘
+  * df
+  * du<当前路径的情况>
+# 网络相关
+  * ipconfig
+  * ping  
+# 用户权限 
+  * sudo useradd username -m
+  * cat /etc/passwd  (sm32VcIRdwAf)
+  * su justdoit <切换用户>
+  *  sudo passwd justdoit<设置密码,密码设置成功后可以使用 su justdoit 登录 ,发现 ubuntu@VM变成了 justdoit@VM>
+  * whoami<当前用户> 
+  * exit<退出>
+  * ctr  + shift  + t<新开一个标签> alt
+  * sudo userdel justdoit
+  * sudo userdel -r justdoit 
+  * sudo -s <切换超级管理员 以  # 号开头>
+  * 用户组 ll 命令中会显示 <文件拥有者,用户组>
+  * groupadd YYY / groupdel YYY
+  * groupmod 多次单击table出先所有组 cat /etc/group
+  * 添加用户到某个组<添加到某个组,就该组的权限>
+    * sudo usermod -a -G sudo justdoit
+    * sudo usermod -a -G adm justdoit
+  * chgrp
+  * chown  
