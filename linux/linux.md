@@ -141,3 +141,42 @@
    * >> 右移  << 左移
 2. 编辑(插入模式),点击 i/a 键 切换到 编辑模式  esc  切换 命令模式  输入 英文冒号(:) 进入末行模式 ,再输入 wq保存退出。
 3. 末行模式 
+
+# ubuntu软件安装与卸载的方法
+  1. 寻找国内镜像源
+     * 清华大学TUNA镜像源
+     * 点击  问号
+     * 点击选择版本
+     * 复制 版本的下的代码
+  2. 备份Ubuntu默认的源地址
+    * sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup<备份 系统自带的 sources.list>   
+  3. 更新源服务器列表
+    * sudo gedit /etc/apt/sources.list   <将源选择的 版本下的 地址  复制(先要删除掉原来的)到打开的框>
+  4. 更新源  
+    * sudo apt-get update 
+
+  # Ubuntu软件操作的相关命令
+  * sudo apt-get update 更新源
+  * sudo apt-get install package 安装包
+  * sudo apt-get remove package 删除包
+  * sudo apt-cache search package 搜索软件包
+  * sudo apt-get install package --reinstall 重新安装包
+  * sudo apt-get build-dep package 安装相关的编译环境
+  * sudo apt-get upgrade 更新已安装的包
+  * sudo apt-get dist-upgrade 升级系统
+  * sudo apt-cahe depends package  了解使用该包依赖哪些包
+#  Linux常用服务器构建
+1. ftp 服务器
+* FTP是 File Transfer Protocol(文件传输协议)的英文简称。用于Internet上的控制文件的双向传输。同时，它也是一个应用程序（Application）。基于不同的操作系统有不同的FTP应用程序，而所有这些应用程序都遵守同一种协议以传输文件。
+* 在FTP的使用当中，用户经常遇到两个概念："下载"（Download）和"上传"（Upload）。 
+* FTP客户端 / FTP服务器
+* sudo apt-get install vsftpd <安装vsftpd服务器>
+* sudo vim /etc/vsftpd.conf  <配置 vsftpd.conf文件>
+   * anonymous_enable = NO <不允许匿名用户登录>
+   * local_root = /home/python/ftp  <指定ftp上传下载的目录>
+   * local_enable = YES <允许本机登录>
+   * chroot_list_file = /etc/vsftpd.chroot_list<允许  vsftpd_chroot_list文件中的用户进行登录FTP服务器>
+   * write_enable = YES <允许上传文件到 FTP服务器>
+   * sudo vim /etc/vsftpd.chroot_list <建立此文件 ,将 Ubuntu的一个用户名放到此文件中。放登录FTP服务器时的用户名。>
+   * 将此 文件夹的拥有这的权限 减去 w
+   * 在  家目录中  建立 一个文件夹<就是使用ftp客户端进行下载、上传时的文件夹>
