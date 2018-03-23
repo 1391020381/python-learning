@@ -180,3 +180,7 @@
    * sudo vim /etc/vsftpd.chroot_list <建立此文件 ,将 Ubuntu的一个用户名放到此文件中。放登录FTP服务器时的用户名。>
    * 将此 文件夹的拥有这的权限 减去 w
    * 在  家目录中  建立 一个文件夹<就是使用ftp客户端进行下载、上传时的文件夹>
+   * sudo /etc/init.d/vsftpd restart <重启FTP服务器,因为 已修改过 /etc/vsftpd.conf   所以只有重启,才能使 ftp服务器按照配置进行工作。>
+   * 登录 ftp ip  (winSCP)
+   * put somefile <上传文件到ftp服务器>
+   * get somefile  
