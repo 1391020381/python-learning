@@ -124,6 +124,9 @@
    * i / I 
    * a  /  A
    * o  / O 换行
+   * w 存盘
+   * wq 存盘退出
+   * q! 不存盘,强制退出
    * yy(4yy) 复制   P 粘贴
    * dd(2dd)  剪切
    * D 剪切从当前光标到行尾   
@@ -139,8 +142,11 @@
    * ctr + r 反撤销
    * 选中   V  v
    * >> 右移  << 左移
-2. 编辑(插入模式),点击 i/a 键 切换到 编辑模式  esc  切换 命令模式  输入 英文冒号(:) 进入末行模式 ,再输入 wq保存退出。
+2. 编辑(插入模式)
+    * 点击 i/a 键 切换到 编辑模式  
+    * esc  切换 命令模式  输入 英文冒号(:) 进入末行模式 ,再输入 wq保存退出。
 3. 末行模式 
+   
 
 # ubuntu软件安装与卸载的方法
   1. 寻找国内镜像源
@@ -184,3 +190,27 @@
    * 登录 ftp ip  (winSCP)
    * put somefile <上传文件到ftp服务器>
    * get somefile  
+2. ssh和scp
+   * ssh<Secure Shell> SSH为建立在应用层和传输层基础上的安全协议。
+   * ssh是目前较可靠,专为远程登录会话和其他网络服务提供安全性的协议。常用于远程登录,以及用户之间进行资料拷贝。
+   * 使用ssh服务,需要安装相应的服务器和客户端。客户端和服务端的关系：A机器想被B机器远程控制,那么A机器需要安装SSH服务器,B机器需要安装SSH客户端。
+   * 安装ssh
+      * sudo apt-get install openssh-server<安装ssh服务器>
+      *  ssh 用户名@Ip <远程登录> 使用ssh访问,如访问出现错误。可查看是否有该文件  ~/..ssh/known_ssh 尝试删除该文件解决。
+   * 使用 SSH 连接服务器
+      * ssh告诉用户,这个主机不能识别,这时键入 yes  SSH就会将相关信息 写入 "~/.ssh/know_hosts"中 ,再次访问,就不会有这些信息了。然后输入口令,就可以登录到主机了。
+   * scp 
+     * 远程拷贝文件 scp -r 的常用方法:
+       1. 使用该命令的前提条件要求目标主机已经成功安装 openssh-server, 如没有安装使用  sudo apt-get install openssh-ssh 安装
+       2. 使用格式： scp -r 目标用户名@目标主机IP地址: /目标文件的绝对地址  /保存到本机的绝对/相对地址  
+          *  scp -r justdoit@192.168.1.100:/home/justdoit/demo/ ./demo  <在后续会提示 输入 yes此时,只能输入 yes 不能简单输入 Y>
+          * 拷贝单个文件可以不加 -r 参数 ,拷贝目录必须要加   
+          * scp 
+            * 本地文件复制到远程
+            * 本地目录复制到远程
+            * 远程文件复制到本地
+            * 远程目录赋值到本地 
+3. samba 
+  * samba是在linux和unix系统上实习smb协议的一个免费软件,能够完成windows mac操作系统下访问linux系统下共享文件。
+  * sudo apt-get install samba samba-common         
+
