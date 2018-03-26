@@ -1,0 +1,11 @@
+classmates = ['a','b','c']
+print('classmates:',classmates)
+print('classmatesLength:',len(classmates))
+classmates.append('justdoit')
+print('append:',classmates)
+classmates.insert(0,'start')
+print('insert:',classmates)
+classmates.pop(0)
+print('pop:',classmates)
+oTuple = (1,2,3)
+print('oTuple:',oTuple)
