@@ -63,3 +63,20 @@
   * dict内部存放顺序和Key放入的顺序是没有关系的
   * dict的key必须是不可变对象。
   *  通过key计算位置的算法称为哈希算法（Hash）。
+# 函数
+  * 在Python中定义一个函数要使用def语句,一次写出函数名、括号、括号中的参数冒号：然后,在缩进中编写函数体,函数的返回值用retrun 语句返回
+  ```
+  # -*- coding: utf-8 -*-
+  def my_abs(x):
+      if x >=0:
+          return x
+      else:
+          return -x    
+  ```  
+   * 空函数  
+      * pass
+   * 参数的检查
+      * raise TypeError('bad operand type')
+   * 返回多个值
+      * 返回值是一个tuple！但是，在语法上，返回一个tuple可以省略括号，而多个变量可以同时接收一个tuple，按位置赋给对应的值，所以，Python的函数返回多值其实就是返回一个tuple   
+      * 函数执行完毕也没有return 语句时,自动return None
