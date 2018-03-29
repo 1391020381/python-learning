@@ -1,5 +1,8 @@
 # Python基础
 * 以 # 号 开头的语句是注释,可以是任意内容。
+* '''  '''    """  """  多行注释
+* #coding=utf-8
+* #-*- coding:utf-8 -*-
 * 一个语句以冒号 ：结尾时,缩进的语句视为代码块
 * 大小写敏感
 ## 数据类型和变量
@@ -118,4 +121,14 @@
    * L[:10:2] 前10个数,每两个取一个
    * L[:] 复制一个L
    * tuple也可以用切片操作，只是操作的结果仍是tuple：
-   ## 迭代
+## 迭代
+ * list tuple dict set str
+ * generator 
+ * isinstance()判断一个对象是否 Iterable对象
+ * form collection import Iterable
+ * isinstance([],Iterable)
+# 函数式编程
+  * 函数式编程的一个特点就是,允许把函数本身作为参数传入另一个函数,还允许返回一个函数
+  * 高阶函数
+     * map() reduce()     list() 
+     * filter() sorted()
