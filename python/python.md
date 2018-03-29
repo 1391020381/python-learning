@@ -132,3 +132,35 @@
   * 高阶函数
      * map() reduce()     list() 
      * filter() sorted()
+     * lambda x: x%n>0  
+     * 返回函数
+       * 高阶函数除了可以接受函数作为参数外,还可以把函数作为结果值返回
+       * 闭包 
+       * 返回的函数并没有立刻执行,而是知道调用了f()才执行
+       * 
+  ```
+           def count():
+    def f(j):
+        def g():
+            return j*j
+        return g
+    fs = []
+    for i in range(1, 4):
+        fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
+    return fs
+     
+  ```
+* 匿名函数
+ * lambda x:x*x
+ * 匿名函数有个限制,就是只能有一个表达式,不用写return 返回值就是该表达式的结果
+ * 可以把一个匿名函数赋值给一个变量,再利用变量调用该函数
+* 装饰器
+  * 函数对象有一个__name__ 属性可以拿到函数的名字 
+  * 因为我们讲了函数也是对象，它有__name__等属性，但你去看经过decorator装饰之后的函数，它们的__name__已经从原来的'now'变成了'wrapper'
+  * functools.wraps
+ * 偏函数 
+  *  Python的functools模块提供了很多有用的功能，其中一个就是偏函数（Partial function）。要注意，这里的偏函数和数学意义上的偏函数不一样。   
+  * functools.partial就是帮助我们创建一个偏函数的
+  * 简单总结functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
+  * 当函数的参数个数太多，需要简化时，使用functools.partial可以创建一个新的函数，这个新函数可以固定住原函数的部分参数，从而在调用时更简单。
+      
