@@ -305,3 +305,45 @@
   * width open(text.txt) as f: f.write('hello,world')
   * 要写入特定编码的文本文件，请给open()函数传入encoding参数，将字符串自动转换成指定编码。
   * 以'w'模式写入文件时，如果文件已存在，会直接覆盖（相当于删掉后新写入一个文件）。如果我们希望追加到文件末尾怎么办？可以传入'a'以追加（append）模式写入。
+  ## StringIO
+  * 数据读写不一定是文件,也可以在内存中读写。
+  * StringIO顾名思义就是在内存中读写str
+  ```
+  from io import StringIO
+  f = StringIO()
+  f.write('hello')
+  f.write('')
+  f.write('world')
+  print(f.getvalue())
+  ```
+  ## BytesIO
+  * StringIO操作额只能是st如果要操作二进制数据,就需要使用BytesIO
+  ## 操作文件和目录
+  * Python内置的os模块也可以直接调用操作系统提供的接口函数
+   * os.name 是posis说明系统是Linux、Unix或者Mac OS X如果是nt就是Windows系统
+   ## 环境变量
+   * 在操作系统中定义的环境变量,全部保存在os。environ这个变量中。
+   * os.environ.get('key')
+   ## 操作文件和目录
+   * os.path.abspath('.')  # 查看当前目录的绝对路径
+   * os.path.join('/user/a','textdir')   '/usser/a/textdir'
+   * os.mkdir('/users/a/testdir')
+   * os.rmdir('/user/a/testdir')
+   * os.path.split('/user/a/testdir/file.txt')   ('user/a/testdir',file.txt)
+   * os.path.splitext()  # 获取扩展名
+   * os.renname('')
+   * os.remove()
+   ## shutil
+   * copyfile(s)
+   ## 序列化
+   * 我们把变量从内存中变成可存储或传输的过程称为序列化。序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到别的机器上。
+   * 把变量内容从序列化的对象重新读到内存里称为反序列化
+   * 在程序运行的过程中，所有的变量都是在内存中，比如，定义一个dict：
+   * d = dict(name='Bob', age=20, score=88)
+   * 可以随时修改变量，比如把name改成'Bill'，但是一旦程序结束，变量所占用的内存就被操作系统全部回收。如果没有把修改后的'Bill'存储到磁盘上，下次重新运行程序，变量又被初始化为'Bob'
+   ## JSON
+   * import json
+   * dumps()
+   ##小结
+   * Python语言特定的序列化模块是pickle，但如果要把序列化搞得更通用、更符合Web标准，就可以使用json模块。
+   * json模块的dumps()和loads()函数是定义得非常好的接口的典范。当我们使用时，只需要传入一个必须的参数。但是，当默认的序列化或反序列机制不满足我们的要求时，我们又可以传入更多的参数来定制序列化或反序列化的规则，既做到了接口简单易用，又做到了充分的扩展性和灵活性。
